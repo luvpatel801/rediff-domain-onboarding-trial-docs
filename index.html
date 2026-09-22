@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guide | Rediff Domain Onboarding private trial</title><style>body{font:17px/1.65 system-ui,-apple-system,sans-serif;color:#182436;max-width:780px;margin:0 auto;padding:32px 20px}h1{font-size:2rem;line-height:1.2}h2{margin-top:2rem}nav{display:flex;gap:22px;border-bottom:1px solid #d8e0e9;padding-bottom:16px}a{color:#ac2d26}code{background:#f1f3f5;padding:2px 4px;border-radius:3px}li{margin:8px 0}footer{border-top:1px solid #d8e0e9;margin-top:40px;padding-top:16px;color:#566276;font-size:14px}</style></head>
+<body><nav aria-label="Trial documents"><a href="./">Guide</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+<main><h1>Rediff Domain Onboarding — Vercel private trial guide</h1>
+<p>This guide describes the current localhost trial. It does not offer a public Rediff service.</p>
+<h2>What it does</h2>
+<ol>
+<li>Enter a domain in the local portal.</li>
+<li>The portal reads public registration and DNS information to identify the registrar, active DNS host, current mail destination, and existing records.</li>
+<li>If Vercel is the active DNS host, connect the Vercel account that controls that exact domain. The integration asks for <strong>Domains: Read</strong> access.</li>
+<li>The portal reads the exact Vercel DNS zone and shows its records beside the public DNS results.</li>
+</ol>
+<p>The trial does <strong>not</strong> add, change, or delete DNS records. It does not test whether email can be sent or received. Finding a DNS host does not prove that the connected Vercel account controls the domain; the account-zone read is the separate check.</p>
+<h2>Try it locally</h2>
+<p>From the repository root, run <code>pnpm install</code>, <code>pnpm build</code>, and <code>pnpm demo:start</code>; then open <code>http://127.0.0.1:3100</code>. The Vercel button appears only after the local server is configured with this integration's slug, client ID, and client secret. Keep the secret on your own machine; do not put it in the browser or repository.</p>
+<p>If you no longer want the connection, remove the integration from your Vercel account. The local review can be cleared with <strong>Start again</strong> or by stopping the local server.</p>
+<h2>Support</h2>
+<p>Contact luvpatel801@gmail.com. This is a private trial; no public support service has been established.</p>
+</main><footer>Private localhost trial · Contact <a href="mailto:luvpatel801@gmail.com">luvpatel801@gmail.com</a></footer></body></html>

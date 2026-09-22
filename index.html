@@ -8,10 +8,11 @@
 <ol>
 <li>Enter a domain in the local portal.</li>
 <li>The portal reads public registration and DNS information to identify the registrar, active DNS host, current mail destination, and existing records.</li>
-<li>If Vercel is the active DNS host, connect the Vercel account that controls that exact domain. The integration asks for <strong>Domains: Read</strong> access.</li>
+<li>If Vercel is the active DNS host, connect the Vercel account that controls that exact domain. The integration asks for <strong>Domains: Read/Write</strong> access.</li>
 <li>The portal reads the exact Vercel DNS zone and shows its records beside the public DNS results.</li>
+<li>If you approve the separate TXT test, the portal adds one new <code>_rediff-test</code> record, checks Vercel's DNS servers, waits two minutes, removes only its test value, and checks again.</li>
 </ol>
-<p>The trial does <strong>not</strong> add, change, or delete DNS records. It does not test whether email can be sent or received. Finding a DNS host does not prove that the connected Vercel account controls the domain; the account-zone read is the separate check.</p>
+<p>Discovery alone changes nothing. The optional TXT test changes only the approved test name; it does not move mail or test whether email can be sent or received. Keep the local server running until removal is confirmed. If cleanup fails, review the exact test value in Vercel. The record's TTL controls caching and does not delete the record automatically.</p>
 <h2>Try it locally</h2>
 <p>From the repository root, run <code>pnpm install</code>, <code>pnpm build</code>, and <code>pnpm demo:start</code>; then open <code>http://127.0.0.1:3100</code>. The Vercel button appears only after the local server is configured with this integration's slug, client ID, and client secret. Keep the secret on your own machine; do not put it in the browser or repository.</p>
 <p>If you no longer want the connection, remove the integration from your Vercel account. The local review can be cleared with <strong>Start again</strong> or by stopping the local server.</p>
